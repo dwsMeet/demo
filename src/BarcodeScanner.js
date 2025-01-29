@@ -18,6 +18,7 @@ const BarcodeScanner = () => {
                     setBarcodeResult(barcode.text);
                 } catch (err) {
                     console.log("No barcode detected:", err.message);
+                    alert("No barcode detected");
                 }
             }
         }
