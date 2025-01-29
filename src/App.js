@@ -1,9 +1,11 @@
 // import BarcodeScanner from "./BarcodeScanner";
 import 'react-barcode-scanner/polyfill';
 import React, { useState, useEffect } from "react";
-import BarcodeReader from "react-barcode-reader";
-import CameraPermission from './CameraPermission';
-import Scanner from './Scanner';
+// import BarcodeReader from "react-barcode-reader";
+import { BarcodeScanner } from 'react-barcode-scanner';
+import 'react-barcode-scanner/polyfill';
+// import CameraPermission from './CameraPermission';
+// import Scanner from './Scanner';
 
 
 function App() {
@@ -46,7 +48,7 @@ function App() {
   };
 
   return (
-    <Scanner />
+    <BarcodeScanner />
   );
 };
 
