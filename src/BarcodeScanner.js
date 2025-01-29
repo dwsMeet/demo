@@ -55,7 +55,7 @@ const BarcodeScanner = () => {
     const [barcodeResult, setBarcodeResult] = useState("");
 
     const videoConstraints = {
-        facingMode: "environment" // Always use the back camera
+        facingMode: "environment"
     };
 
     const handleScan = async () => {

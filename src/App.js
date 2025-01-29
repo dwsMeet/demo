@@ -1,6 +1,7 @@
 import BarcodeScanner from "./BarcodeScanner";
 import 'react-barcode-scanner/polyfill';
 import React, { useState, useEffect } from "react";
+import BarcodeReaders from "./BarcodeReader";
 // import BarcodeReader from "react-barcode-reader";
 // import { BarcodeScanner } from 'react-barcode-scanner';
 // import 'react-barcode-scanner/polyfill';
@@ -54,7 +55,8 @@ function App() {
     //   <BarcodeScanner onResult={(code) => setResult(code)} />
     //   <p>Scanned Result: {result}</p>
     // </div>
-    <BarcodeScanner />
+    // <BarcodeScanner />
+    <BarcodeReaders />
   );
 };
 
