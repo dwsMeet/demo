@@ -12,6 +12,7 @@ function App() {
   const [barcode, setBarcode] = useState("");
   const [hasPermission, setHasPermission] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [result, setResult] = useState('');
 
   useEffect(() => {
     // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -48,7 +49,10 @@ function App() {
   };
 
   return (
-    <BarcodeScanner />
+    <div>
+      <BarcodeScanner onResult={(code) => setResult(code)} />
+      <p>Scanned Result: {result}</p>
+    </div>
   );
 };
 
