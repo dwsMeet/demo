@@ -16,6 +16,7 @@ function App() {
   const [hasPermission, setHasPermission] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [result, setResult] = useState('');
+  const [data, setData] = React.useState("Not Found");
 
   useEffect(() => {
     // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
