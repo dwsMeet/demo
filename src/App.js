@@ -1,7 +1,8 @@
-import BarcodeScanner from "./BarcodeScanner";
-import 'react-barcode-scanner/polyfill';
+// import BarcodeScanner from "./BarcodeScanner";
+// import 'react-barcode-scanner/polyfill';
 import React, { useState, useEffect } from "react";
-import BarcodeReaders from "./BarcodeReader";
+// import BarcodeReaders from "./BarcodeReader";
+import BarcodeScannerComponent from "react-qr-barcode-scanner";
 // import BarcodeReader from "react-barcode-reader";
 // import { BarcodeScanner } from 'react-barcode-scanner';
 // import 'react-barcode-scanner/polyfill';
@@ -56,7 +57,18 @@ function App() {
     //   <p>Scanned Result: {result}</p>
     // </div>
     // <BarcodeScanner />
-    <BarcodeReaders />
+    // <BarcodeReaders />
+    <>
+      <BarcodeScannerComponent
+        width={500}
+        height={500}
+        onUpdate={(err, result) => {
+          if (result) setData(result.text);
+          else setData("Not Found");
+        }}
+      />
+      <p>{data}</p>
+    </>
   );
 };
 
