@@ -1,9 +1,8 @@
 // import BarcodeScanner from "./BarcodeScanner";
 // import 'react-barcode-scanner/polyfill';
 import React, { useState, useEffect } from "react";
-// import BarcodeReaders from "./BarcodeReader";
-// import BarcodeScannerComponent from "react-qr-barcode-scanner";
-import { QrReader } from 'react-qr-reader';
+import BarcodeReaders from "./BarcodeReader";
+import CustomBarcodeScanner from "./CustomBarcodeScanner";
 // import BarcodeReader from "react-barcode-reader";
 // import { BarcodeScanner } from 'react-barcode-scanner';
 // import 'react-barcode-scanner/polyfill';
@@ -17,7 +16,6 @@ function App() {
   const [hasPermission, setHasPermission] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [result, setResult] = useState('');
-  const [data, setData] = React.useState("Not Found");
 
   useEffect(() => {
     // if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -60,21 +58,7 @@ function App() {
     // </div>
     // <BarcodeScanner />
     // <BarcodeReaders />
-    <>
-      <QrReader
-        onResult={(result, error) => {
-          if (!!result) {
-            setData(result?.text);
-          }
-
-          if (!!error) {
-            console.info(error);
-          }
-        }}
-        style={{ width: '100%' }}
-      />
-      <p>{data}</p>
-    </>
+    <CustomBarcodeScanner />
   );
 };
 
